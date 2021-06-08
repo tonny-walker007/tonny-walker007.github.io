@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylee.css">
+    <title>Tonny-Walker</title>
+</head>
+<body>
+    <div class="img-slider">
+        <div class="slide active">
+            <img src="images/Welton.jpg" alt="">
+
+        </div>
+
+        <div class="slide">
+            <img src="images/welton...JPG" alt="">
+
+        </div>
+
+        <div class="slide">
+            <img src="images/IMG_4928-Editar copy.jpg" alt="">
+
+        </div>
+
+        <div class="slide">
+            <img src="images/Weltonx copy.JPG" alt="">
+
+        </div>
+        <div class="navigation">
+            <div class="btn active"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+    
+    //Javascript para slide manual
+    var manualNav = function(manual){
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+
+
+            btns.forEach((btn) => {
+                btn.classList.remove('active');
+
+            })
+        })
+
+
+
+        slides[manual].classList.add('active');
+        btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) =>{
+        btn.addEventListener("click", () => {
+            manualNav(i);
+            currentSlide = i;
+
+
+        });
+
+    });
+
+    </script>
+</body>
+</html>
